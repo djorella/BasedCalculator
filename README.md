@@ -2,13 +2,13 @@
 
 This is a simple python GUI calculator, Used the Tkinter module to make this script into a Graphical UI app. Have fun!
 
-#Before running the script, you mjst install:
+#Before running the script, you must install:
 ```
 sudo apt-get install python-tk (python2)
 sudo apt-get install python3-tk (python3)
 ```
 
-#Through pip3
+#Or through pip3
 
 ```
 pip3 install pytk 
