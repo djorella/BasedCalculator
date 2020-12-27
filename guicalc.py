@@ -27,17 +27,15 @@ class app(Frame):
         Entry(self, relief=RIDGE, textvariable=display, 
         justify='right', bd=30, bg="powder blue").pack(side=TOP, expand=YES,
         fill=BOTH)
-
-        for clearButton in ("C"):
-            erase = bCalc(self, TOP)
-            for bchar in clearButton:
-                button(erase, LEFT, bchar, lambda storeObj=display, q=bchar: storeObj.set(''))
         
-        for negateButton in ("-"):
-            negate = bCalc(self, TOP)
-            for bchar in negateButton:
-                button(negate, LEFT, bchar, lambda storeObj=display, q=bchar: storeObj.set('-' + storeObj.get()))
+        modify = bCalc(self,TOP)
+        for bchar in "C-":
+            if bchar == '-':
+                button(modify, RIGHT, bchar, lambda storeObj=display, q=bchar: storeObj.set('-' + storeObj.get()) if '-' not in storeObj else q=bchar: storeObj.set(''+ storeObj.get())) 
+                continue
                 
+            button(modify, LEFT, bchar, lambda storeObj=display, q=bchar: storeObj.set(''))
+           
             
 
         for basedButtons in ("789/", "456*", "123-", "0.+"):
